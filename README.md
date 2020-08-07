@@ -1,10 +1,11 @@
 # 玉山人工智慧公開挑戰賽2020夏季賽 - NLP應用挑戰賽
-* Brainchild
+* by Brainchild
 ## 預測說明
 * 判斷該新聞內文是否含有AML相關焦點人物，並擷取出焦點人物名單
 ## 文件說明
 * create_model.ipynb - 製作model
 * api - 使用flask 將model佈署至GCP
+* docs - 相關說明文件
 ## 摘要
 用Bert分別訓練四階段模型
 1.	犯罪模型（Bert + BiLSTM + Dense）：將有犯罪事實標為1，與犯罪無關標為0的資料訓練。初步篩選包含犯罪之新聞。
@@ -29,3 +30,10 @@
 ## 流程
 ![流程圖](https://github.com/jasonliu1990/esun_summer_game_2020/blob/master/docs/%E6%B5%81%E7%A8%8B.png)
 
+## api 
+* 環境: GCP ubuntu 18.04
+* flask + gunicorn
+* 主要package
+  * tensorflow-gpu==1.15.3
+  * Keras==2.3.1
+  * keras-bert==0.84.0
