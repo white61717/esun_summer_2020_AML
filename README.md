@@ -12,4 +12,5 @@
 3.	NER模型（Bert + BiLSTM + CRF）：用CKIP初步辨識並篩選出人名（包含三字、兩字簡稱及單名），以此訓練NER模型。
 4.	人名AML模型（Bert(微調) + Dense）：取官方原始331筆包含AML人名新聞中所有人名的前後句訓練，將含有AML人名的前後句標為1，含有非AML人名的標為0。篩選最終AML人名。
 ## 流程
+![流程圖](https://github.com/jasonliu1990/esun_summer_game_2020/blob/master/docs/%E6%B5%81%E7%A8%8B.png)
 
