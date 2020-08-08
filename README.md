@@ -37,3 +37,4 @@
   * tensorflow-gpu==1.15.3
   * Keras==2.3.1
   * keras-bert==0.84.0
+* sudo gunicorn -w 1 --thread=4 -b 0.0.0.0:8080 --timeout=600 api:app --daemon
