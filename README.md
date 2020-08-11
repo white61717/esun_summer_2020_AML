@@ -6,7 +6,7 @@
 * create_model.ipynb - 製作model
 * api - 使用flask 將model佈署至GCP
 * docs - 相關說明文件
-## pre-train model
+## pre-trained model
 * [BERT](https://github.com/google-research/bert)
     - [BERT-Base, Chinese](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip): Chinese Simplified and Traditional, 12-layer, 768-hidden, 12-heads, 110M parameters
 ## 摘要
