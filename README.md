@@ -8,7 +8,7 @@
 * docs - 相關說明文件
 ## pre-train model
 * [bert](https://github.com/google-research/bert)
-    - BERT-Base, Chinese: Chinese Simplified and Traditional, 12-layer, 768-hidden, 12-heads, 110M parameters
+    - [BERT-Base, Chinese](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip): Chinese Simplified and Traditional, 12-layer, 768-hidden, 12-heads, 110M parameters
 ## 摘要
 用Bert分別訓練四階段模型
 1.	犯罪模型（Bert + BiLSTM + Dense）：將有犯罪事實標為1，與犯罪無關標為0的資料訓練。初步篩選包含犯罪之新聞。
