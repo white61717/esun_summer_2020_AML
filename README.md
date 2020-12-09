@@ -1,20 +1,20 @@
 # 玉山人工智慧公開挑戰賽2020夏季賽 - NLP應用挑戰賽
 * by Brainchild
 ## 預測說明
-* 判斷該新聞內文是否含有AML相關焦點人物，並擷取出焦點人物名單
+* 判斷該新聞內文是否含有 AML 相關焦點人物，並擷取出焦點人物名單
 ## 文件說明
-* create_model.ipynb - 製作model
-* api - 使用flask 將model佈署至GCP
+* create_model.ipynb - 製作 model
+* api - 使用 flask 將 model 佈署至 GCP
 * docs - 相關說明文件
 ## pre-trained model
 * [BERT](https://github.com/google-research/bert)
     - [BERT-Base, Chinese](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip): Chinese Simplified and Traditional, 12-layer, 768-hidden, 12-heads, 110M parameters
 ## 摘要
-用Bert分別訓練四階段模型
-1.	犯罪模型（Bert + BiLSTM + Dense）：將有犯罪事實標為1，與犯罪無關標為0的資料訓練。初步篩選包含犯罪之新聞。
-2.	AML犯罪模型（Bert(微調) + Dense）：將犯罪且與AML有關標為1，犯罪且與AML無關標為0的資料訓練。篩選有AML相關犯罪之新聞。
-3.	NER模型（Bert + BiLSTM + CRF）：用CKIP初步辨識並篩選出人名（包含三字、兩字簡稱及單名），以此訓練NER模型。
-4.	人名AML模型（Bert(微調) + Dense）：取官方原始331筆包含AML人名新聞中所有人名的前後句訓練，將含有AML人名的前後句標為1，含有非AML人名的標為0。篩選最終AML人名。
+用 Bert 分別訓練四階段模型
+1.	犯罪模型（Bert + BiLSTM + Dense）：將有犯罪事實標為 1，與犯罪無關標為 0 的資料訓練。初步篩選包含犯罪之新聞。
+2.	AML 犯罪模型（Bert(微調) + Dense）：將犯罪且與 AML 有關標為1，犯罪且與 AML 無關標為0的資料訓練。篩選有 AML 相關犯罪之新聞。
+3.	NER 模型（Bert + BiLSTM + CRF）：用 CKIP 初步辨識並篩選出人名（包含三字、兩字簡稱及單名），以此訓練 NER 模型。
+4.	人名 AML 模型（Bert(微調) + Dense）：取官方原始 331 筆包含 AML 人名新聞中所有人名的前後句訓練，將含有AML人名的前後句標為 1，含有非 AML 人名的標為 0。篩選最終 AML 人名。
 ## 特徵
 1.	資料前處理：<br>
 (1) 	將原始新聞刪除< >、【】、（）、〔〕中的字<br>
@@ -39,7 +39,7 @@
 ## api 
 * 環境: GCP ubuntu 18.04
 * flask + gunicorn
-* 主要package
+* 主要 package
   * tensorflow-gpu==1.15.3
   * Keras==2.3.1
   * keras-bert==0.84.0
